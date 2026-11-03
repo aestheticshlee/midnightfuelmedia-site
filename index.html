@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Midnight Fuel Media</title>
 <meta name="description" content="Midnight Fuel Media is an Edmonton automotive creative studio: photography, video, social media management and paid ads for shops, builders and the Alberta car community.">
+<link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@ h1,h2,h3,.display{font-family:var(--display);text-transform:uppercase;letter-spa
 header.site{position:sticky;top:0;z-index:20;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:40px;height:40px;flex:none}
+.brand svg,.brand .logo{width:44px;height:44px;flex:none;object-fit:contain}
 .brand span{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.08em;text-transform:uppercase}
 .brand span b{color:var(--red);font-weight:700}
 nav.main{display:flex;gap:28px;align-items:center}
@@ -209,8 +210,9 @@ footer.site a:hover{color:var(--red)}
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#home" aria-label="Midnight Fuel Media home">
-      <!-- Swap this SVG for your circular badge logo -->
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#EEEBE5" stroke-width="1.5"/><circle cx="20" cy="20" r="13" fill="none" stroke="#E10600" stroke-width="1.5"/><text x="20" y="24.5" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="12" fill="#EEEBE5" letter-spacing=".5">MFM</text></svg>
+      <!-- Your logo: upload it as images/logo.png. The circle below only shows if that file is missing. -->
+      <img class="logo" src="images/logo.png" alt="" onerror="this.remove();document.getElementById('logoFallback').style.display='block'">
+      <svg id="logoFallback" style="display:none" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#EEEBE5" stroke-width="1.5"/><circle cx="20" cy="20" r="13" fill="none" stroke="#E10600" stroke-width="1.5"/><text x="20" y="24.5" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="12" fill="#EEEBE5" letter-spacing=".5">MFM</text></svg>
       <span>Midnight Fuel <b>Media</b></span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
@@ -474,7 +476,7 @@ footer.site a:hover{color:var(--red)}
 const PORTFOLIO = [
   {title:"Rolling shots", client:"Private build", cat:"Automotive", img:"", wide:true},
   {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", img:""},
-  {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:""},
+  {title:"PPF install", client:"Precision Edmonton", cat:"Content", img:""},
   {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", img:""},
   {title:"Drift day", client:"Event coverage", cat:"Events", img:"", wide:true},
   {title:"Night meet", client:"Edmonton car scene", cat:"Events", img:""},
