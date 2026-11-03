@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Fuel Media</title>
+<meta name="description" content="Midnight Fuel Media is an Edmonton automotive creative studio: photography, video, social media management and paid ads for shops, builders and the Alberta car community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Single-theme by choice: the brand lives on black. Layout: wide margins, hard left alignment, thin red rules as the only ornament. */
+:root{
+  --ink:#0A0A0B;
+  --panel:#131315;
+  --line:#26262A;
+  --bone:#EEEBE5;
+  --mute:#8E8B86;
+  --red:#E10600;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Montserrat",Arial,Helvetica,sans-serif;
+  --wrap:1180px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:.95;text-wrap:balance;font-weight:700}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.mute{color:var(--mute)}
+.rule{width:48px;height:2px;background:var(--red);border:0}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:20;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none}
+.brand span{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.08em;text-transform:uppercase}
+.brand span b{color:var(--red);font-weight:700}
+nav.main{display:flex;gap:28px;align-items:center}
+nav.main a{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mute);padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
+nav.main a:hover{color:var(--bone)}
+nav.main a[aria-current="page"]{color:var(--bone);border-bottom-color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:14px 26px;border:1px solid var(--red);background:var(--red);color:#fff;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--bone)}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--bone)}
+nav.main .btn{padding:10px 18px;color:#fff;border-bottom:1px solid var(--red)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
+@media (max-width:860px){
+  .menu-toggle{display:block}
+  nav.main{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 24px 24px;background:var(--ink);border-bottom:1px solid var(--line);display:none}
+  nav.main.open{display:flex}
+}
+
+/* Views */
+.view{display:none}
+.view.active{display:block}
+section{padding:96px 0}
+section + section{border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.section-head h2{font-size:clamp(40px,6vw,64px);margin-top:12px}
+.section-head a{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none;color:var(--mute)}
+.section-head a:hover{color:var(--bone)}
+
+/* Hero */
+.hero{padding:120px 0 96px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-10%;top:30%;width:70%;height:2px;background:linear-gradient(90deg,transparent,var(--red));opacity:.8}
+.hero h1{font-size:clamp(56px,11vw,148px);margin:20px 0 32px;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lede{max-width:56ch;font-size:18px;color:var(--mute)}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid var(--line)}
+.facts div{padding:24px 24px 0 0}
+.facts dt{font-family:var(--display);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.facts dd{font-family:var(--display);font-size:28px;font-weight:600;text-transform:uppercase;margin-top:4px}
+@media (max-width:640px){.facts{grid-template-columns:1fr}.facts div{padding:20px 0 0}}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.service{padding:32px 28px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.service .num{font-family:var(--display);color:var(--red);font-weight:600;letter-spacing:.1em}
+.service h3{font-size:30px}
+.service p{color:var(--mute);font-size:15px}
+.service ul{list-style:none;margin-top:auto;padding-top:12px;font-size:14px;display:grid;gap:6px}
+.service li::before{content:"";display:inline-block;width:10px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
+@media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.services{grid-template-columns:1fr}}
+
+/* Portfolio */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid var(--line);color:var(--mute);padding:8px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{border-color:var(--red);color:var(--bone)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.tile{grid-column:span 4;position:relative;aspect-ratio:4/5;background:var(--panel);overflow:hidden;border:1px solid var(--line)}
+.tile.wide{grid-column:span 8;aspect-ratio:auto}
+.tile .shot{position:absolute;inset:0}
+.tile img,.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-reduced-motion:reduce){.tile video{display:none}}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.tile figcaption strong{font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em;display:block;line-height:1.1}
+.tile figcaption span{font-size:12px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.tile .tag{font-family:var(--display);font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);padding:4px 8px;white-space:nowrap}
+.tile .swap{position:absolute;top:16px;left:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:860px){.tile,.tile.wide{grid-column:span 6;aspect-ratio:4/5}}
+@media (max-width:560px){.tile,.tile.wide{grid-column:span 12}}
+
+/* Clients */
+.clients{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.client{border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:10px}
+.client h3{font-size:28px}
+.client .what{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-family:var(--display);font-weight:600}
+.client p{color:var(--mute);font-size:15px}
+@media (max-width:860px){.clients{grid-template-columns:1fr}}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+blockquote{border-left:2px solid var(--red);padding:8px 0 8px 24px;display:flex;flex-direction:column;gap:18px}
+blockquote p{font-size:17px;line-height:1.6}
+blockquote footer{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--mute)}
+blockquote.pending p{color:var(--mute);font-style:italic}
+@media (max-width:860px){.quotes{grid-template-columns:1fr;gap:32px}}
+
+/* Audit CTA */
+.cta{background:var(--panel);border-top:1px solid var(--line)}
+.cta .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.cta h2{font-size:clamp(40px,6vw,72px)}
+.cta ol{list-style:none;counter-reset:s;display:grid;gap:18px}
+.cta li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;color:var(--mute)}
+.cta li::before{content:"0" counter(s);font-family:var(--display);color:var(--red);font-weight:700;font-size:20px;line-height:1.3}
+.cta li b{color:var(--bone);font-weight:600;display:block}
+@media (max-width:860px){.cta .wrap{grid-template-columns:1fr}}
+
+/* Journal */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.post-card{border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:14px;text-decoration:none;transition:border-color .2s}
+.post-card:hover{border-color:var(--mute)}
+.post-card .meta{display:flex;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.post-card .meta .cat{color:var(--red);font-family:var(--display);font-weight:600;font-size:13px}
+.post-card h3{font-size:30px}
+.post-card p{color:var(--mute);font-size:15px}
+.post-card .more{margin-top:auto;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:14px}
+@media (max-width:860px){.posts{grid-template-columns:1fr}}
+article.post{max-width:68ch;margin:0 auto}
+article.post h1{font-size:clamp(44px,7vw,80px);margin:16px 0 20px}
+article.post .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:40px}
+article.post h2{font-size:34px;margin:44px 0 14px}
+article.post p,article.post li{font-size:17px;margin-bottom:18px;color:#D9D6D0}
+article.post ul,article.post ol{padding-left:22px}
+article.post .back{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none;color:var(--mute)}
+article.post .back:hover{color:var(--bone)}
+.post-end{margin-top:56px;padding-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+.portrait{aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden}
+.about h2{font-size:clamp(40px,6vw,64px);margin:12px 0 28px}
+.about p{margin-bottom:18px;color:#D9D6D0;max-width:60ch}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.values div{border-top:2px solid var(--red);padding-top:16px}
+.values h3{font-size:24px;margin-bottom:8px}
+.values p{font-size:14px;color:var(--mute)}
+@media (max-width:860px){.about{grid-template-columns:1fr}.values{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:64px}
+.contact h1{font-size:clamp(52px,8vw,96px);margin:16px 0 24px}
+.contact dl{display:grid;gap:20px;margin-top:40px}
+.contact dt{font-family:var(--display);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.contact dd{font-size:17px}
+form{display:grid;gap:18px}
+.field{display:grid;gap:8px}
+.field label{font-family:var(--display);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.field input,.field select,.field textarea{font:inherit;color:var(--bone);background:var(--panel);border:1px solid var(--line);padding:14px 16px;border-radius:0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+.field textarea{min-height:140px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--mute)}
+.check input{margin-top:4px;accent-color:var(--red)}
+.form-note{font-size:14px;color:var(--mute);min-height:1.4em}
+.form-note.ok{color:var(--bone)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);padding:56px 0 40px}
+footer.site .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+footer.site .tag{font-family:var(--display);font-size:30px;text-transform:uppercase;font-weight:700;line-height:1}
+footer.site .tag em{font-style:normal;color:var(--red)}
+footer.site h4{font-family:var(--display);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:12px;font-weight:600}
+footer.site ul{list-style:none;display:grid;gap:6px;font-size:14px}
+footer.site a{text-decoration:none;color:var(--bone)}
+footer.site a:hover{color:var(--red)}
+.legal{grid-column:1/-1;padding-top:32px;margin-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){footer.site .wrap{grid-template-columns:1fr}}
+
+/* Page heads for inner views */
+.page-head{padding:96px 0 48px}
+.page-head h1{font-size:clamp(56px,9vw,120px);margin-top:16px}
+.page-head p{max-width:58ch;color:var(--mute);font-size:18px;margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Midnight Fuel Media home">
+      <!-- Swap this SVG for your circular badge logo -->
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#EEEBE5" stroke-width="1.5"/><circle cx="20" cy="20" r="13" fill="none" stroke="#E10600" stroke-width="1.5"/><text x="20" y="24.5" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="12" fill="#EEEBE5" letter-spacing=".5">MFM</text></svg>
+      <span>Midnight Fuel <b>Media</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#journal" data-nav="journal">Journal</a>
+      <a href="#contact" class="btn" data-nav="contact">Free Audit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div class="view" id="view-home">
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Automotive creative studio · Edmonton, Alberta</p>
+      <h1>Built in the dark. <em>Made to be seen.</em></h1>
+      <p class="lede">Photography, video, social media and paid ads for shops, builders and brands in Alberta's car scene. We help you show up online as yourself, with content that looks as sharp as your work.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Get your free audit</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+      <dl class="facts">
+        <div><dt>In the scene</dt><dd>Nearly a decade</dd></div>
+        <div><dt>Based in</dt><dd>Edmonton, AB</dd></div>
+        <div><dt>Focus</dt><dd>Automotive first</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Services</p><h2>What we do</h2></div>
+        <a href="#contact">Book a consult →</a>
+      </div>
+      <div class="services">
+        <div class="service">
+          <span class="num">01</span>
+          <h3>Content Creation</h3>
+          <p>Reels, photo sets and behind-the-scenes content shot at your shop, on your builds, with your people in frame.</p>
+          <ul><li>Short-form reels</li><li>Install and process content</li><li>Monthly content days</li></ul>
+        </div>
+        <div class="service">
+          <span class="num">02</span>
+          <h3>Social Media Management</h3>
+          <p>Planning, posting and community care so your page stays active while you stay in the bay.</p>
+          <ul><li>Content calendar</li><li>Captions and scheduling</li><li>Monthly analytics recap</li></ul>
+        </div>
+        <div class="service">
+          <span class="num">03</span>
+          <h3>Total Social + Ads</h3>
+          <p>Everything in management, plus Meta and Google ad campaigns built to bring real customers through the door.</p>
+          <ul><li>Meta Ads and Google Ads</li><li>Google Business Profile</li><li>Monthly performance report</li></ul>
+        </div>
+        <div class="service">
+          <span class="num">04</span>
+          <h3>Photography</h3>
+          <p>Rolling shots, events, brand shoots and portraits. High contrast, deep blacks, true reds. Delivered in a private online gallery.</p>
+          <ul><li>Rolling and static car shoots</li><li>Events and meets</li><li>Brand and portrait sessions</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Portfolio</p><h2>Selected work</h2></div>
+        <a href="#work">Full portfolio →</a>
+      </div>
+      <div class="grid" id="homeGrid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Clients</p><h2>Who we work with</h2></div>
+      </div>
+      <div class="clients" id="clientList"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Testimonials</p><h2>In their words</h2></div>
+      </div>
+      <div class="quotes" id="quoteList"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Free online presence audit</p>
+        <h2 style="margin:12px 0 20px">See where you stand online. No charge.</h2>
+        <p class="mute" style="max-width:52ch;margin-bottom:32px">A quick, honest look at how your business shows up today, with the three changes that would make the biggest difference. Yours to keep whether we work together or not.</p>
+        <a class="btn" href="#contact">Request your audit</a>
+      </div>
+      <ol>
+        <li><span><b>Google Business Profile</b>Photos, reviews, hours and how you show up in local search.</span></li>
+        <li><span><b>Instagram and Facebook</b>Posting rhythm, content mix and whether your page shows the people behind the work.</span></li>
+        <li><span><b>Website and ads</b>Load time, calls to action, and where ad spend is or isn't paying off.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Journal</p><h2>Latest from the shop floor</h2></div>
+        <a href="#journal">All posts →</a>
+      </div>
+      <div class="posts" id="homePosts"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ WORK ============ -->
+<div class="view" id="view-work">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Portfolio</p>
+    <h1>The work</h1>
+    <p>Builds, shops, events and the people behind them. Shot across Edmonton and Alberta.</p>
+  </div></div>
+  <section style="padding-top:0;border-top:0">
+    <div class="wrap">
+      <div class="filters" id="filters" role="group" aria-label="Filter portfolio"></div>
+      <div class="grid" id="workGrid"></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Clients</p><h2>Who we work with</h2></div></div>
+      <div class="clients" id="clientList2"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="view" id="view-about">
+  <section style="border-top:0">
+    <div class="wrap about">
+      <div class="portrait">
+        <!-- Replace with: <img src="images/shlee.jpg" alt="Shlee Reilly, founder of Midnight Fuel Media"> -->
+        <div class="shot" data-art="portrait" style="position:absolute;inset:0"></div>
+        <span class="swap" style="position:absolute;top:16px;left:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Your portrait here</span>
+      </div>
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Hi, I'm Shlee.</h2>
+        <p>I've spent nearly a decade in Edmonton's automotive community: at meets, at drift events, in shops and in the passenger seat. Midnight Fuel Media came out of that. I kept seeing incredible work from local shops and builders that nobody online ever got to see.</p>
+        <p>My background is in business: a Bachelor of Commerce in International Business, years in credit analysis and eCommerce, and a Google Data Analytics certificate. So alongside the camera, I care about the numbers. Every client gets a monthly report showing what's working and what we'll change.</p>
+        <p>The goal is simple. Help you go from invisible online to knowing how to show up as yourself, with your face, your process and your story, so customers already trust you before they call.</p>
+        <div class="values">
+          <div><h3>Show up</h3><p>Your people and your process are the content. We put them in front of the camera.</p></div>
+          <div><h3>Shoot it right</h3><p>High contrast, deep blacks, true reds. Consistent from the first frame to the last.</p></div>
+          <div><h3>Prove it</h3><p>Clear reporting every month, in plain language, tied to real business results.</p></div>
+        </div>
+        <div style="margin-top:40px"><a class="btn" href="#contact">Work with me</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ JOURNAL ============ -->
+<div class="view" id="view-journal">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Journal</p>
+    <h1>Shop talk</h1>
+    <p>Automotive news from around Alberta, plus marketing tips and tricks for shops, builders and creatives in the community.</p>
+  </div></div>
+  <section style="padding-top:0;border-top:0">
+    <div class="wrap">
+      <div class="filters" id="postFilters" role="group" aria-label="Filter posts"></div>
+      <div class="posts" id="allPosts"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SINGLE POST ============ -->
+<div class="view" id="view-post">
+  <section style="border-top:0"><div class="wrap"><article class="post" id="postBody"></article></div></section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="view" id="view-contact">
+  <section style="border-top:0">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Let's get you seen.</h1>
+        <p class="mute" style="max-width:46ch">Tell me a little about your business and I'll send back a free online presence audit, or we can jump straight into planning a shoot.</p>
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:hello@midnightfuelmedia.com">hello@midnightfuelmedia.com</a></dd></div>
+          <div><dt>Based in</dt><dd>Edmonton, Alberta. Serving Edmonton, Red Deer and Calgary.</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/" rel="noopener">@midnightfuelmedia</a></dd></div>
+        </dl>
+      </div>
+      <!-- To go live: replace YOUR_FORM_ID with your Formspree form ID -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="row2">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="f-business">Business</label><input id="f-business" name="business" autocomplete="organization"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="f-ig">Instagram or website</label><input id="f-ig" name="links"></div>
+        </div>
+        <div class="field">
+          <label for="f-service">I'm interested in</label>
+          <select id="f-service" name="service">
+            <option>Free online presence audit</option>
+            <option>Content creation</option>
+            <option>Social media management</option>
+            <option>Total social + ads</option>
+            <option>Photography</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-msg">Tell me about your business</label><textarea id="f-msg" name="message"></textarea></div>
+        <label class="check" for="f-news"><input id="f-news" name="newsletter" type="checkbox"> Send me the occasional email with marketing tips and Alberta car scene news.</label>
+        <div><button class="btn" type="submit">Send it</button></div>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p class="tag">Built in the dark.<br><em>Made to be seen.</em></p>
+      <p class="mute" style="font-size:14px;margin-top:16px;max-width:40ch">Midnight Fuel Media is an automotive creative studio in Edmonton, Alberta.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#journal">Journal</a></li><li><a href="#contact">Free audit</a></li></ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul><li><a href="mailto:hello@midnightfuelmedia.com">hello@midnightfuelmedia.com</a></li><li><a href="https://www.instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/" rel="noopener">Facebook</a></li></ul>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Midnight Fuel Media. Edmonton, Alberta.</span><span>Photography and content by Midnight Fuel Media.</span></div>
+  </div>
+</footer>
+
+<script>
+/* ================= EDIT YOUR CONTENT HERE =================
+   Portfolio: set img to a file path (e.g. "images/gtr-rolling.jpg") to replace the placeholder art.
+   For a video tile, add video:"videos/clip.mp4" (muted, loops). Keep img too as the still frame
+   shown while it loads and for visitors who turn off motion.
+   Clients, testimonials and posts are plain lists below. */
+
+const PORTFOLIO = [
+  {title:"Rolling shots", client:"Private build", cat:"Automotive", img:"", wide:true},
+  {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", img:""},
+  {title:"PPF install", client:"Precision Edmonton", cat:"Content", img:""},
+  {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", img:""},
+  {title:"Drift day", client:"Event coverage", cat:"Events", img:"", wide:true},
+  {title:"Night meet", client:"Edmonton car scene", cat:"Events", img:""},
+  {title:"Owner portrait", client:"Brand session", cat:"Portraits", img:""},
+  {title:"Detail study", client:"Private build", cat:"Automotive", img:""},
+  {title:"Ad creative", client:"Precision Edmonton", cat:"Ads", img:""}
+];
+
+const CLIENTS = [
+  {name:"Priminal Auto Styling", what:"Short-form content", text:"Monthly reels retainer covering builds, installs and the day-to-day at the shop."},
+  {name:"Precision Edmonton", what:"Social, content + ads", text:"Social media, content and Google Ads support for one of Edmonton's longest-running vehicle wrap and PPF shops."}
+];
+
+/* Replace each pending quote with the client's real words once you have them.
+   Set pending:false when it's real. */
+const TESTIMONIALS = [
+  {quote:"Quote from Priminal Auto Styling goes here.", name:"Owner, Priminal Auto Styling", pending:true},
+  {quote:"Quote from Precision Edmonton goes here.", name:"Precision Edmonton", pending:true}
+];
+
+/* Journal posts. Categories: "Alberta News", "Marketing Tips", "Behind the Lens".
+   For news posts, link your sources at the end of the post. */
+const POSTS = [
+  {
+    slug:"show-your-face", cat:"Marketing Tips", date:"2026-11-03", read:"4 min",
+    title:"Why your shop page needs your face on it",
+    excerpt:"Customers pick the shop they already feel like they know. Here's how to get comfortable on camera without turning into an influencer.",
+    body:`
+<p>Most shop pages in Edmonton look the same: a finished car, a logo, a caption with hashtags. The work is great. The problem is that nobody can tell who did it.</p>
+<p>People don't hand their car keys to a logo. They hand them to a person they trust. The fastest way to build that trust online is to let customers see you before they ever walk in.</p>
+<h2>Start small</h2>
+<ul>
+<li><strong>Hands first.</strong> If you're not ready to talk to the camera, film your hands doing the work. It's still you, and it shows skill.</li>
+<li><strong>Voice next.</strong> Narrate one install a week. Thirty seconds of "here's what we're doing and why" beats a silent montage.</li>
+<li><strong>Then your face.</strong> One short clip a week answering a question customers ask you at the counter.</li>
+</ul>
+<h2>Answer the counter questions</h2>
+<p>Keep a note on your phone of every question a customer asks in a week. Each one is a video. "How long does PPF take?" "Will tint pass inspection?" "Why does a ceramic coat cost what it does?" You already know the answers. Now you have a content calendar.</p>
+<h2>Consistency beats polish</h2>
+<p>A phone, decent light and a clean background are enough. One honest clip a week will do more for your shop than one perfect video a quarter.</p>`
+  },
+  {
+    slug:"gbp-checklist", cat:"Marketing Tips", date:"2026-10-27", read:"5 min",
+    title:"The 10-minute Google Business Profile tune-up",
+    excerpt:"Your Google profile is often the first thing a customer sees. A quick checklist to make sure it's working for you.",
+    body:`
+<p>When someone in Edmonton searches "window tint near me," your Google Business Profile shows up before your website does. For a lot of shops, it's the whole first impression.</p>
+<h2>The checklist</h2>
+<ol>
+<li><strong>Hours.</strong> Correct, including holiday hours. Nothing loses a customer faster than showing up to a locked door.</li>
+<li><strong>Primary category.</strong> Pick the most specific one that fits, like "Window tinting service" over "Auto repair shop."</li>
+<li><strong>Services list.</strong> Add every service with a short description. These help you show up for more searches.</li>
+<li><strong>Photos.</strong> Add new photos every week. Real work, real shop, real people. Skip stock images.</li>
+<li><strong>Reviews.</strong> Reply to every one, good or bad, within a few days.</li>
+<li><strong>Posts.</strong> Share an update or offer at least twice a month.</li>
+</ol>
+<h2>Make asking for reviews a habit</h2>
+<p>Create a short review link from your profile and keep it as a QR code at the counter. Ask at pickup, when the customer is looking at their car and feeling good about it. That moment is when people say yes.</p>`
+  },
+  {
+    slug:"winter-shooting", cat:"Behind the Lens", date:"2026-10-20", read:"4 min",
+    title:"Shooting cars in an Alberta winter",
+    excerpt:"Short days, salt spray and minus thirty. How to keep creating content through the off season.",
+    body:`
+<p>Alberta winters cut your daylight in half and cover every car in salt. A lot of shops go quiet online from November to March. That's exactly why it's a good time to keep posting: there's less noise and your customers are still scrolling.</p>
+<h2>Use the dark</h2>
+<p>Golden hour comes early in winter, and blue hour right after it is perfect for car shots. Taillights, headlights and shop lights all pop against a deep blue sky. You don't need to wait for summer to get great images.</p>
+<h2>Move it inside</h2>
+<ul>
+<li>Shop content is winter content. Installs, wraps, tint and detail work all happen indoors.</li>
+<li>Clean up one corner of the shop as a dedicated shooting spot with consistent lighting.</li>
+<li>Film the process, not just the result. Winter is a great time for longer before-and-after stories.</li>
+</ul>
+<h2>Protect your gear</h2>
+<p>Keep batteries warm in an inside pocket and bring spares. When you come back inside, leave your camera in its bag for a while so condensation forms on the bag, not on the lens.</p>`
+  },
+  {
+    slug:"alberta-news-template", cat:"Alberta News", date:"2026-11-01", read:"2 min",
+    title:"Alberta car scene roundup: November",
+    excerpt:"Sample layout for your monthly news roundup. Replace with real stories and link your sources.",
+    body:`
+<p><em>This is a template for your monthly Alberta roundup. Replace each section with real news and link the source at the bottom.</em></p>
+<h2>Events</h2>
+<p>Upcoming meets, shows and track days around Edmonton, Calgary and Red Deer. Include dates, locations and a link to the organizer.</p>
+<h2>Rules and regulations</h2>
+<p>Changes to Alberta rules that affect drivers and shops, like inspection, tint or registration updates. Link the official government source.</p>
+<h2>Local shops</h2>
+<p>New shops opening, shops expanding, and standout builds from the community. Tag the shops when you share the post.</p>
+<h2>Sources</h2>
+<p>List each source with a link here.</p>`
+  }
+];
+
+/* ================= SITE LOGIC ================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtDate = d => new Date(d+"T12:00:00").toLocaleDateString("en-CA",{month:"short",day:"numeric",year:"numeric"});
+
+/* Placeholder art: a dark frame with a red light streak, drawn per tile so each looks different */
+function placeholderArt(seed){
+  let h=0; for(const ch of seed) h=(h*31+ch.charCodeAt(0))>>>0;
+  const y=25+(h%50), angle=-12+(h%24), w=40+(h%40), glow=(h%3)+1;
+  return `background:
+    radial-gradient(ellipse ${w}% 6% at ${30+(h%40)}% ${y}%, rgba(225,6,0,.55), transparent 70%),
+    linear-gradient(${angle}deg, transparent ${y-1}%, rgba(225,6,0,.${glow+4}) ${y}%, transparent ${y+1}%),
+    radial-gradient(circle at ${h%100}% 100%, #1d1d21, #0b0b0c 70%);`;
+}
+
+function tile(p){
+  const art = p.video
+    ? (p.img?`<img src="${esc(p.img)}" alt="">`:'') + `<video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} autoplay muted loop playsinline preload="metadata" aria-label="${esc(p.title)} for ${esc(p.client)}"></video>`
+    : p.img
+    ? `<img src="${esc(p.img)}" alt="${esc(p.title)} for ${esc(p.client)}" loading="lazy">`
+    : `<div class="shot" style="${placeholderArt(p.title+p.client)}"></div><span class="swap">Photo placeholder</span>`;
+  return `<figure class="tile${p.wide?' wide':''}">${art}<figcaption><div><strong>${esc(p.title)}</strong><span>${esc(p.client)}</span></div><span class="tag">${esc(p.cat)}</span></figcaption></figure>`;
+}
+function renderWork(cat){
+  const list = cat==="All" ? PORTFOLIO : PORTFOLIO.filter(p=>p.cat===cat);
+  $("#workGrid").innerHTML = list.map(p=>tile({...p, wide: cat==="All" && p.wide})).join("");
+}
+function postCard(p){
+  return `<a class="post-card" href="#post-${p.slug}"><div class="meta"><span class="cat">${esc(p.cat)}</span><span>${fmtDate(p.date)}</span><span>${p.read}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p><span class="more">Read →</span></a>`;
+}
+function filterButtons(el, cats, onPick){
+  el.innerHTML = ["All",...cats].map((c,i)=>`<button type="button" aria-pressed="${i===0}">${esc(c)}</button>`).join("");
+  el.addEventListener("click", e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+    onPick(b.textContent);
+  });
+}
+
+const sorted = [...POSTS].sort((a,b)=>b.date.localeCompare(a.date));
+
+// Home
+$("#homeGrid").innerHTML = PORTFOLIO.slice(0,5).map(tile).join("");
+const clientHTML = CLIENTS.map(c=>`<div class="client"><span class="what">${esc(c.what)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p></div>`).join("");
+$("#clientList").innerHTML = clientHTML; $("#clientList2").innerHTML = clientHTML;
+$("#quoteList").innerHTML = TESTIMONIALS.map(t=>`<blockquote class="${t.pending?'pending':''}"><p>${t.pending?'':'“'}${esc(t.quote)}${t.pending?'':'”'}</p><footer>${esc(t.name)}</footer></blockquote>`).join("");
+$("#homePosts").innerHTML = sorted.slice(0,3).map(postCard).join("");
+
+// Work
+filterButtons($("#filters"), [...new Set(PORTFOLIO.map(p=>p.cat))], renderWork);
+renderWork("All");
+
+// Journal
+function renderPosts(cat){ $("#allPosts").innerHTML = (cat==="All"?sorted:sorted.filter(p=>p.cat===cat)).map(postCard).join(""); }
+filterButtons($("#postFilters"), [...new Set(POSTS.map(p=>p.cat))], renderPosts);
+renderPosts("All");
+
+// Router
+const VIEWS = ["home","work","about","journal","contact"];
+function route(){
+  const hash = location.hash.slice(1) || "home";
+  let view = VIEWS.includes(hash) ? hash : "home";
+  if(hash.startsWith("post-")){
+    const p = POSTS.find(x=>"post-"+x.slug===hash);
+    if(p){
+      view="post";
+      $("#postBody").innerHTML = `<a class="back" href="#journal">← Journal</a><p class="eyebrow" style="margin-top:32px">${esc(p.cat)}</p><h1>${esc(p.title)}</h1><p class="meta">${fmtDate(p.date)} · ${p.read} read · By Shlee Reilly</p>${p.body}<div class="post-end"><span class="mute">Want this done for your shop?</span><a class="btn" href="#contact">Get a free audit</a></div>`;
+    }
+  }
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active", v.id==="view-"+view));
+  document.querySelectorAll("[data-nav]").forEach(a=>{
+    const on = a.dataset.nav===view || (view==="post" && a.dataset.nav==="journal");
+    on ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current");
+  });
+  $("#mainNav").classList.remove("open"); $("#menuToggle").setAttribute("aria-expanded","false");
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", route);
+route();
+
+// Mobile menu
+$("#menuToggle").addEventListener("click", ()=>{
+  const open = $("#mainNav").classList.toggle("open");
+  $("#menuToggle").setAttribute("aria-expanded", open);
+});
+
+// Contact form: posts to Formspree once YOUR_FORM_ID is replaced
+$("#contactForm").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const form=e.target, note=$("#formNote");
+  if(form.action.includes("YOUR_FORM_ID")){
+    note.className="form-note";
+    note.textContent="This form isn't connected yet. Please email hello@midnightfuelmedia.com for now.";
+    return;
+  }
+  note.textContent="Sending...";
+  try{
+    const r = await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
+    if(!r.ok) throw 0;
+    form.reset(); note.className="form-note ok"; note.textContent="Got it. I'll be in touch within two business days.";
+  }catch{
+    note.className="form-note"; note.textContent="That didn't send. Please email hello@midnightfuelmedia.com instead.";
+  }
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
