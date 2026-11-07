@@ -409,7 +409,7 @@ footer.site a:hover{color:var(--red)}
         <div><span class="n">01</span><h3>Automotive first</h3><p>Cars and the shops that work on them are the focus, not a side niche. We already know the language, the work and the customers.</p></div>
         <div><span class="n">02</span><h3>In the scene</h3><p>Nearly a decade at Edmonton meets, drift events and shops. We show up with the community, not just for the shoot.</p></div>
         <div><span class="n">03</span><h3>Numbers you can read</h3><p>A background in business and data analytics means every month ends with a clear report on what worked and what changes next.</p></div>
-        <div><span class="n">04</span><h3>Straight to Shlee</h3><p>No account manager in between. You plan, shoot and review directly with the person doing the work.</p></div>
+        <div><span class="n">04</span><h3>One point of contact</h3><p>Shlee manages every account personally. The creatives on your project are the people you meet at planning and on shoot day, never a hidden back office.</p></div>
       </div>
     </div>
   </section>
@@ -597,7 +597,7 @@ footer.site a:hover{color:var(--red)}
         <span class="swap" style="position:absolute;top:16px;left:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Your portrait here</span>
       </div>
       <div>
-        <p class="eyebrow">About</p>
+        <p class="eyebrow">About the owner</p>
         <h2>Hi, I'm Shlee.</h2>
         <p>I've spent nearly a decade in Edmonton's automotive community: at meets, at drift events, in shops and in the passenger seat. Midnight Fuel Media came out of that. I kept seeing incredible work from local shops and builders that nobody online ever got to see.</p>
         <p>My background is in business: a Bachelor of Commerce in International Business, years in credit analysis and eCommerce, and a Google Data Analytics certificate. So alongside the camera, I care about the numbers. Every client gets a monthly report showing what's working and what we'll change.</p>
@@ -609,6 +609,13 @@ footer.site a:hover{color:var(--red)}
         </div>
         <div style="margin-top:40px"><a class="btn" href="#contact">Work with me</a></div>
       </div>
+    </div>
+  </section>
+  <!-- TEAM: hidden until the TEAM list in the script has at least one person -->
+  <section id="team" hidden>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">The team</p><h2>Who you'll work with</h2></div></div>
+      <div class="clients" id="teamList"></div>
     </div>
   </section>
 </div>
@@ -715,7 +722,6 @@ const PORTFOLIO = [
   {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
   {title:"Fleet truck", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-fleet-truck.jpg", video:"videos/precision-fleet-truck.mp4"},
   {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
-  {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
   {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
   {title:"Expedition PPF + ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-expedition-ppf-ceramic.jpg", video:"videos/priminal-expedition-ppf-ceramic.mp4"},
   {title:"Porsche ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"},
@@ -777,7 +783,6 @@ const PROJECTS = [
     ],
     gallery:[
       {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
-      {title:"Referral reel", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
       {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
       {title:"Expedition full PPF + ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-expedition-ppf-ceramic.jpg", video:"videos/priminal-expedition-ppf-ceramic.mp4"},
       {title:"Porsche ceramic coating", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"},
@@ -808,6 +813,10 @@ const PROJECTS = [
     status:"Work is underway. Post engagement and followers are trending up, and results will be shared here as they come in."
   }
 ];
+
+/* TEAM: add contractors here when they join. The team section on the About page appears automatically.
+   Example: {name:"Name", role:"Video editor", bio:"One or two sentences.", img:"images/team/name.jpg"} */
+const TEAM = [];
 
 const CLIENTS = [
   {name:"Priminal Auto Styling", what:"Short-form content", text:"Monthly reels retainer covering builds, installs and the day-to-day at the shop."},
@@ -963,6 +972,10 @@ document.querySelectorAll("[data-terms]").forEach(el=>el.textContent=PRICING.ter
 document.querySelectorAll("[data-bundle]").forEach(el=>el.innerHTML=`<div><p class="eyebrow">Best value</p><h3>Total Social + Ads</h3><p>Everything in social media management plus full Meta and Instagram ad campaign management, with one report covering organic and paid. Ad spend billed separately.</p></div><div class="price"><small>Starts at</small><b>${esc(PRICING.bundle.from)}</b> /mo<small style="margin-top:6px;color:var(--red)">${esc(PRICING.bundle.save)}</small></div>`);
 const clientHTML = CLIENTS.map(c=>`<div class="client"><span class="what">${esc(c.what)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p></div>`).join("");
 $("#clientList2").innerHTML = clientHTML;
+if(TEAM.length){
+  $("#team").hidden = false;
+  $("#teamList").innerHTML = TEAM.map(m=>`<div class="client">${m.img?`<img src="${esc(m.img)}" alt="${esc(m.name)}" style="aspect-ratio:1;object-fit:cover;width:100%;margin-bottom:8px">`:""}<span class="what">${esc(m.role)}</span><h3>${esc(m.name)}</h3><p>${esc(m.bio||"")}</p></div>`).join("");
+}
 /* Testimonials stay hidden until at least one has pending:false */
 const realQuotes = TESTIMONIALS.filter(t=>!t.pending);
 if(realQuotes.length) $("#testimonials").hidden = false;
