@@ -712,8 +712,8 @@ footer.site a:hover{color:var(--red)}
 
 const PORTFOLIO = [
   {title:"Rolling shots", client:"Private build", cat:"Automotive", img:"images/PorscheGT3_roller.jpg", wide:true},
-  {title:"Wrap reveal", client:"Precision Vehicle Wraps", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
   {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
+  {title:"Fleet truck", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-fleet-truck.jpg", video:"videos/precision-fleet-truck.mp4"},
   {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
   {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
   {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
@@ -790,7 +790,8 @@ const PROJECTS = [
     title:"Social and ads strategy for a long-running wrap shop",
     summary:"Bringing a strong local reputation to every platform, with organic and paid working together.",
     services:["Social Media","Advertising"], since:"2026", role:"Social media, content and ads strategy",
-    cover:{video:"videos/Prairie_Reveal.mp4"},
+    cover:null, /* horizontal video for the top of the project page goes here, e.g. {video:"videos/precision-horizontal.mp4"} */
+    thumb:{img:"images/precision-jeep-pink-wrap.jpg"},
     challenge:"Precision has decades of experience and thousands of wrapped vehicles behind it, but its online presence didn't fully reflect that. The goal is to grow organic reach and get more out of every advertising dollar.",
     approach:[
       "A full audit of social pages, Google Business Profile and ad performance",
@@ -800,9 +801,8 @@ const PROJECTS = [
       "An ongoing review of ad campaigns to focus spend where it performs best"
     ],
     gallery:[
-      {title:"Wrap reveal", client:"Precision Vehicle Wraps", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
-  {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
       {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
+      {title:"Fleet truck", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-fleet-truck.jpg", video:"videos/precision-fleet-truck.mp4"},
       {title:"Fleet Wraps 101", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-fleet-wraps-101.jpg", video:"videos/precision-fleet-wraps-101.mp4", sound:true}
     ],
     status:"Work is underway. Post engagement and followers are trending up, and results will be shared here as they come in."
@@ -946,7 +946,7 @@ function media(m, alt){
   return `<div class="shot" style="position:absolute;inset:0;${placeholderArt(alt)}"></div>`;
 }
 function caseCard(c){
-  return `<a class="case" href="#project-${c.slug}"><div class="cover">${media(c.cover||{}, c.client)}</div><div class="body"><div class="tags">${c.services.map(x=>`<span>${esc(x)}</span>`).join("")}</div><h3>${esc(c.client)}</h3><p>${esc(c.summary)}</p><span class="more">Project details →</span></div></a>`;
+  return `<a class="case" href="#project-${c.slug}"><div class="cover">${media(c.thumb||c.cover||{}, c.client)}</div><div class="body"><div class="tags">${c.services.map(x=>`<span>${esc(x)}</span>`).join("")}</div><h3>${esc(c.client)}</h3><p>${esc(c.summary)}</p><span class="more">Project details →</span></div></a>`;
 }
 $("#homeCases").innerHTML = PROJECTS.map(caseCard).join("");
 document.querySelectorAll("[data-cases]").forEach(el=>{
@@ -989,7 +989,7 @@ function route(){
         <h1>${esc(c.title)}</h1>
         <p class="lede">${esc(c.summary)}</p>
         <dl class="facts"><div><dt>Client</dt><dd>${esc(c.client)}</dd></div><div><dt>Services</dt><dd>${esc(c.services.join(", "))}</dd></div><div><dt>Since</dt><dd>${esc(c.since)}</dd></div></dl>
-        <div class="hero-media">${media(c.cover||{}, c.client)}</div>
+        ${c.cover?`<div class="hero-media">${media(c.cover, c.client)}</div>`:`<div style="height:40px"></div>`}
         <div class="cols"><h2>The challenge</h2><div><p>${esc(c.challenge)}</p></div></div>
         <div class="cols"><h2>What we did</h2><div><ul>${c.approach.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div></div>
         ${c.gallery&&c.gallery.length?`<div class="cols"><h2>The work</h2><div class="grid">${c.gallery.map(g=>tile(g)).join("")}</div></div>`:""}
