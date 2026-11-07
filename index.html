@@ -103,6 +103,9 @@ section + section{border-top:1px solid var(--line)}
 .tile{grid-column:span 4;position:relative;aspect-ratio:4/5;background:var(--panel);overflow:hidden;border:1px solid var(--line)}
 .tile.wide{grid-column:span 8;aspect-ratio:auto}
 .tile .shot{position:absolute;inset:0}
+.tile.tall{aspect-ratio:9/16}
+.tile.tall video{object-fit:contain;background:#000}
+.tile.tall figcaption{top:0;bottom:auto;background:linear-gradient(rgba(0,0,0,.85),transparent);pointer-events:none}
 .tile img,.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media (prefers-reduced-motion:reduce){.tile video{display:none}}
 .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
@@ -709,7 +712,8 @@ footer.site a:hover{color:var(--red)}
 
 const PORTFOLIO = [
   {title:"Rolling shots", client:"Private build", cat:"Automotive", img:"images/PorscheGT3_roller.jpg", wide:true},
-  {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
+  {title:"Wrap reveal", client:"Precision Vehicle Wraps", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
+  {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
   {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
   {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
   {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
@@ -719,7 +723,7 @@ const PORTFOLIO = [
   {title:"Night meet", client:"Edmonton car scene", cat:"Events", img:""},
   {title:"Owner portrait", client:"Brand session", cat:"Portraits", img:""},
   {title:"Detail study", client:"Private build", cat:"Automotive", img:""},
-  {title:"Ad creative", client:"Precision Edmonton", cat:"Ads", img:""}
+  {title:"Ad creative", client:"Precision Vehicle Wraps", cat:"Ads", img:""}
 ];
 
 /* PRICING: edit names, prices and details here. Leave price:"" to show "Custom quote". */
@@ -752,7 +756,7 @@ const TIERS = {
    If a file is missing, the client's name shows as text instead. */
 const LOGOS = [
   {name:"Priminal Auto Styling", img:"images/logos/priminal.png"},
-  {name:"Precision Edmonton", img:"images/logos/precision.png"}
+  {name:"Precision Vehicle Wraps", img:"images/logos/precision.png"}
 ];
 
 /* PROJECTS: each one gets its own page at #project-<slug>.
@@ -776,12 +780,13 @@ const PROJECTS = [
       {title:"Referral reel", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
       {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
       {title:"Expedition full PPF + ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-expedition-ppf-ceramic.jpg", video:"videos/priminal-expedition-ppf-ceramic.mp4"},
-      {title:"Porsche ceramic coating", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"}
+      {title:"Porsche ceramic coating", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"},
+      {title:"Lantern Lifts shop update", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-lantern-lifts-update.jpg", video:"videos/priminal-lantern-lifts-update.mp4", sound:true}
     ],
     status:"Early signs are good: engagement on posts is up and the following is growing across platforms. Full numbers will be shared once the first quarter wraps up."
   },
   {
-    slug:"precision-edmonton", client:"Precision Edmonton",
+    slug:"precision-vehicle-wraps", client:"Precision Vehicle Wraps",
     title:"Social and ads strategy for a long-running wrap shop",
     summary:"Bringing a strong local reputation to every platform, with organic and paid working together.",
     services:["Social Media","Advertising"], since:"2026", role:"Social media, content and ads strategy",
@@ -790,11 +795,15 @@ const PROJECTS = [
     approach:[
       "A full audit of social pages, Google Business Profile and ad performance",
       "Consistent posting built around real wrap and PPF work from the shop",
+      "Owner-led educational videos, like the Fleet Wraps 101 series, edited into short-form clips",
       "Google Business Profile improvements to support local search",
       "An ongoing review of ad campaigns to focus spend where it performs best"
     ],
     gallery:[
-      {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", video:"videos/Prairie_Reveal.mp4"}
+      {title:"Wrap reveal", client:"Precision Vehicle Wraps", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
+  {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
+      {title:"Pink Jeep wrap", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-jeep-pink-wrap.jpg", video:"videos/precision-jeep-pink-wrap.mp4"},
+      {title:"Fleet Wraps 101", client:"Precision Vehicle Wraps", cat:"Content", img:"images/precision-fleet-wraps-101.jpg", video:"videos/precision-fleet-wraps-101.mp4", sound:true}
     ],
     status:"Work is underway. Post engagement and followers are trending up, and results will be shared here as they come in."
   }
@@ -802,14 +811,14 @@ const PROJECTS = [
 
 const CLIENTS = [
   {name:"Priminal Auto Styling", what:"Short-form content", text:"Monthly reels retainer covering builds, installs and the day-to-day at the shop."},
-  {name:"Precision Edmonton", what:"Social, content + ads", text:"Social media, content and Google Ads support for one of Edmonton's longest-running vehicle wrap and PPF shops."}
+  {name:"Precision Vehicle Wraps", what:"Social, content + ads", text:"Social media, content and Google Ads support for one of Edmonton's longest-running vehicle wrap and PPF shops."}
 ];
 
 /* Replace each pending quote with the client's real words once you have them.
    Set pending:false when it's real. */
 const TESTIMONIALS = [
   {quote:"Quote from Priminal Auto Styling goes here.", name:"Owner, Priminal Auto Styling", pending:true},
-  {quote:"Quote from Precision Edmonton goes here.", name:"Precision Edmonton", pending:true}
+  {quote:"Quote from Precision Vehicle Wraps goes here.", name:"Precision Vehicle Wraps", pending:true}
 ];
 
 /* Journal posts. Categories: "Alberta News", "Marketing Tips", "Behind the Lens".
@@ -901,6 +910,9 @@ function placeholderArt(seed){
 }
 
 function tile(p){
+  if(p.sound){
+    return `<figure class="tile tall"><video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} controls playsinline preload="none" aria-label="${esc(p.title)} for ${esc(p.client)}"></video><figcaption><div><strong>${esc(p.title)}</strong><span>${esc(p.client)} · tap to play with sound</span></div></figcaption></figure>`;
+  }
   const art = p.video
     ? (p.img?`<img src="${esc(p.img)}" alt="">`:'') + `<video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} autoplay muted loop playsinline preload="metadata" aria-label="${esc(p.title)} for ${esc(p.client)}"></video>`
     : p.img
