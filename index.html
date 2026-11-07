@@ -495,7 +495,7 @@ footer.site a:hover{color:var(--red)}
   </section>
   <section>
     <div class="wrap">
-      <div class="section-head"><div><p class="eyebrow">Instagram</p><h2>Recent work</h2></div><a href="https://www.instagram.com/midnightfuelmedia" rel="noopener">Follow on Instagram →</a></div>
+      <div class="section-head"><div><p class="eyebrow">Instagram</p><h2>Recent work</h2></div><a href="https://www.instagram.com/midnightfuel.shlee" rel="noopener">Follow on Instagram →</a></div>
       <!-- INSTAGRAM FEED: paste the embed code from Behold or LightWidget inside the div below, replacing the placeholder paragraph. -->
       <div class="ig" id="instagramFeed">
         <div data-behold-id="EUipcdXEs8qUHN7fKCFR"></div>
@@ -649,7 +649,7 @@ footer.site a:hover{color:var(--red)}
         <dl>
           <div><dt>Email</dt><dd><a href="mailto:hello@midnightfuelmedia.com">hello@midnightfuelmedia.com</a></dd></div>
           <div><dt>Based in</dt><dd>Edmonton, Alberta. Serving Edmonton, Red Deer and Calgary.</dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/" rel="noopener">@midnightfuelmedia</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/midnightfuel.shlee" rel="noopener">@midnightfuel.shlee</a></dd></div>
         </dl>
       </div>
       <!-- To go live: replace YOUR_FORM_ID with your Formspree form ID -->
@@ -697,7 +697,7 @@ footer.site a:hover{color:var(--red)}
     </div>
     <div>
       <h4>Get in touch</h4>
-      <ul><li><a href="mailto:hello@midnightfuelmedia.com">hello@midnightfuelmedia.com</a></li><li><a href="https://www.instagram.com/" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/" rel="noopener">Facebook</a></li></ul>
+      <ul><li><a href="mailto:hello@midnightfuelmedia.com">hello@midnightfuelmedia.com</a></li><li><a href="https://www.instagram.com/midnightfuel.shlee" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/" rel="noopener">Facebook</a></li></ul>
     </div>
     <div class="legal"><span>© <span id="yr">2026</span> Midnight Fuel Media. Edmonton, Alberta.</span><span>Photography and content by Midnight Fuel Media.</span></div>
   </div>
@@ -911,7 +911,7 @@ function placeholderArt(seed){
 
 function tile(p){
   if(p.sound){
-    return `<figure class="tile tall"><video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} controls playsinline preload="none" aria-label="${esc(p.title)} for ${esc(p.client)}"></video><figcaption><div><strong>${esc(p.title)}</strong><span>${esc(p.client)} · tap to play with sound</span></div></figcaption></figure>`;
+    return `<figure class="tile tall"><video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} controls playsinline preload="none" aria-label="${esc(p.title)} for ${esc(p.client)}"></video><figcaption><div><strong>${esc(p.title)}</strong><span>${esc(p.client)}</span></div></figcaption></figure>`;
   }
   const art = p.video
     ? (p.img?`<img src="${esc(p.img)}" alt="">`:'') + `<video src="${esc(p.video)}"${p.img?` poster="${esc(p.img)}"`:''} autoplay muted loop playsinline preload="metadata" aria-label="${esc(p.title)} for ${esc(p.client)}"></video>`
