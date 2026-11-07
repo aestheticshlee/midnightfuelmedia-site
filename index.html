@@ -411,7 +411,7 @@ footer.site a:hover{color:var(--red)}
     </div>
   </section>
 
-  <section>
+  <section id="testimonials" hidden>
     <div class="wrap">
       <div class="section-head">
         <div><p class="eyebrow">Testimonials</p><h2>In their words</h2></div>
@@ -951,7 +951,10 @@ document.querySelectorAll("[data-terms]").forEach(el=>el.textContent=PRICING.ter
 document.querySelectorAll("[data-bundle]").forEach(el=>el.innerHTML=`<div><p class="eyebrow">Best value</p><h3>Total Social + Ads</h3><p>Everything in social media management plus full Meta and Instagram ad campaign management, with one report covering organic and paid. Ad spend billed separately.</p></div><div class="price"><small>Starts at</small><b>${esc(PRICING.bundle.from)}</b> /mo<small style="margin-top:6px;color:var(--red)">${esc(PRICING.bundle.save)}</small></div>`);
 const clientHTML = CLIENTS.map(c=>`<div class="client"><span class="what">${esc(c.what)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p></div>`).join("");
 $("#clientList2").innerHTML = clientHTML;
-$("#quoteList").innerHTML = TESTIMONIALS.map(t=>`<blockquote class="${t.pending?'pending':''}"><p>${t.pending?'':'“'}${esc(t.quote)}${t.pending?'':'”'}</p><footer>${esc(t.name)}</footer></blockquote>`).join("");
+/* Testimonials stay hidden until at least one has pending:false */
+const realQuotes = TESTIMONIALS.filter(t=>!t.pending);
+if(realQuotes.length) $("#testimonials").hidden = false;
+$("#quoteList").innerHTML = realQuotes.map(t=>`<blockquote class="${t.pending?'pending':''}"><p>${t.pending?'':'“'}${esc(t.quote)}${t.pending?'':'”'}</p><footer>${esc(t.name)}</footer></blockquote>`).join("");
 $("#homePosts").innerHTML = sorted.slice(0,3).map(postCard).join("");
 
 
