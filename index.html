@@ -43,7 +43,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .brand svg,.brand .logo{width:44px;height:44px;flex:none;object-fit:contain}
 .brand span{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.08em;text-transform:uppercase}
 .brand span b{color:var(--red);font-weight:700}
-nav.main{display:flex;gap:28px;align-items:center}
+nav.main{display:flex;gap:24px;align-items:center}
 nav.main a{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mute);padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
 nav.main a:hover{color:var(--bone)}
 nav.main a[aria-current="page"]{color:var(--bone);border-bottom-color:var(--red)}
@@ -53,7 +53,7 @@ nav.main a[aria-current="page"]{color:var(--bone);border-bottom-color:var(--red)
 .btn.ghost:hover{border-color:var(--bone)}
 nav.main .btn{padding:10px 18px;color:#fff;border-bottom:1px solid var(--red)}
 .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--bone);font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer}
-@media (max-width:860px){
+@media (max-width:1180px){
   .menu-toggle{display:block}
   nav.main{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 24px 24px;background:var(--ink);border-bottom:1px solid var(--line);display:none}
   nav.main.open{display:flex}
@@ -83,14 +83,16 @@ section + section{border-top:1px solid var(--line)}
 @media (max-width:640px){.facts{grid-template-columns:1fr}.facts div{padding:20px 0 0}}
 
 /* Services */
-.services{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .service{padding:32px 28px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
 .service .num{font-family:var(--display);color:var(--red);font-weight:600;letter-spacing:.1em}
 .service h3{font-size:30px}
 .service p{color:var(--mute);font-size:15px}
+.service .from{font-family:var(--display);font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--bone)}
+.service .more{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:14px;text-decoration:none;color:var(--red)}
 .service ul{list-style:none;margin-top:auto;padding-top:12px;font-size:14px;display:grid;gap:6px}
 .service li::before{content:"";display:inline-block;width:10px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
-@media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:980px){.services{grid-template-columns:1fr}}
 @media (max-width:560px){.services{grid-template-columns:1fr}}
 
 /* Portfolio */
@@ -199,6 +201,99 @@ footer.site a:hover{color:var(--red)}
 .legal{grid-column:1/-1;padding-top:32px;margin-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:760px){footer.site .wrap{grid-template-columns:1fr}}
 
+/* Service pages */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.offer{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.offer h3{font-size:26px}
+.offer p{color:var(--mute);font-size:15px}
+@media (max-width:860px){.offers{grid-template-columns:1fr}}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{border:1px solid var(--line);padding:32px 28px;display:flex;flex-direction:column;gap:18px}
+.tier .lvl{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.tier h3{font-size:40px}
+.tier .price{font-family:var(--display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.tier .price b{font-size:40px;font-weight:700;letter-spacing:0}
+.tier .price small{display:block;font-size:12px;letter-spacing:.18em;color:var(--mute);font-weight:600}
+.tier dl{display:grid;gap:0;border-top:1px solid var(--line)}
+.tier dl div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.tier dt{color:var(--mute)}
+.tier dd{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.tier p{color:var(--mute);font-size:14px}
+.tier .btn{margin-top:auto;justify-content:center}
+@media (max-width:900px){.tiers{grid-template-columns:1fr}}
+.includes{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:var(--mute)}
+.includes b{color:var(--bone);font-weight:600;margin-right:4px}
+.includes span::before{content:"";display:inline-block;width:10px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
+.bundle{margin-top:48px;border:1px solid var(--red);padding:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.bundle h3{font-size:34px;margin:8px 0 10px}
+.bundle p{color:var(--mute);max-width:60ch}
+.bundle .price{font-family:var(--display);text-align:right;font-variant-numeric:tabular-nums}
+.bundle .price small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.bundle .price b{font-size:48px;line-height:1}
+@media (max-width:760px){.bundle{grid-template-columns:1fr}.bundle .price{text-align:left}}
+.fine{margin-top:20px;font-size:13px;color:var(--mute)}
+.demo{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.demo h2{font-size:clamp(40px,6vw,64px);margin:12px 0 24px}
+.demo p{color:#D9D6D0;margin-bottom:16px;max-width:56ch}
+.phone{position:relative;aspect-ratio:9/16;max-width:320px;width:100%;justify-self:center;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.phone video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.phone .swap{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:860px){.demo{grid-template-columns:1fr}}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:st}
+.steps li{counter-increment:st;border-top:2px solid var(--red);padding-top:16px}
+.steps li::before{content:"0" counter(st);font-family:var(--display);color:var(--red);font-weight:700;font-size:18px}
+.steps h3{font-size:24px;margin:6px 0 8px}
+.steps p{font-size:14px;color:var(--mute)}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.ig{min-height:200px}
+.ig .ig-empty{display:grid;place-items:center;min-height:160px;text-align:center;color:var(--mute);font-size:14px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:10px}
+.project h3{font-size:26px}
+.project p{color:var(--mute);font-size:14px}
+.project .q{margin-top:auto;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:14px;color:var(--red)}
+@media (max-width:860px){.projects{grid-template-columns:1fr}}
+
+.brand span,nav.main a{white-space:nowrap}
+.page-head p.eyebrow,.demo p.eyebrow{color:var(--red);font-size:14px;margin:0}
+@media (max-width:1240px){.brand span{font-size:19px}nav.main{gap:18px}nav.main a{font-size:15px;letter-spacing:.1em}}
+/* Logos, why, projects */
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:20px 56px;padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.logos .lbl{font-family:var(--display);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.logos img{height:48px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1) brightness(1.6);opacity:.85;transition:opacity .2s,filter .2s}
+.logos img:hover{opacity:1;filter:none}
+.logos .word{font-family:var(--display);font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:.08em;color:var(--bone);opacity:.85}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why div{border-top:2px solid var(--red);padding-top:18px}
+.why .n{font-family:var(--display);color:var(--red);font-weight:700;font-size:18px}
+.why h3{font-size:28px;margin:6px 0 10px}
+.why p{color:var(--mute);font-size:15px}
+@media (max-width:980px){.why{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.why{grid-template-columns:1fr}}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.case{border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s}
+.case:hover{border-color:var(--mute)}
+.case .cover{position:relative;aspect-ratio:16/10;background:var(--panel);overflow:hidden}
+.case .cover img,.case .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.case .body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.case .tags{display:flex;flex-wrap:wrap;gap:8px}
+.case .tags span,.proj .tags span{font-family:var(--display);font-size:12px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);padding:3px 8px;color:var(--mute)}
+.case h3{font-size:30px}
+.case p{color:var(--mute);font-size:15px}
+.case .more{margin-top:auto;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:14px;color:var(--red)}
+.proj .hero-media{position:relative;aspect-ratio:16/8;background:var(--panel);border:1px solid var(--line);overflow:hidden;margin:40px 0}
+.proj .hero-media img,.proj .hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.proj h1{font-size:clamp(48px,8vw,104px);margin:16px 0 20px}
+.proj .lede{font-size:19px;color:var(--mute);max-width:60ch}
+.proj .facts{margin-top:40px}
+.proj .cols{display:grid;grid-template-columns:240px 1fr;gap:24px 48px;padding:40px 0;border-top:1px solid var(--line)}
+.proj .cols h2{font-size:30px}
+.proj .cols p,.proj .cols li{color:#D9D6D0;font-size:17px;max-width:62ch;margin-bottom:14px}
+.proj .cols ul{padding-left:20px}
+.proj .back{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none;color:var(--mute)}
+@media (max-width:760px){.proj .cols{grid-template-columns:1fr}}
+
 /* Page heads for inner views */
 .page-head{padding:96px 0 48px}
 .page-head h1{font-size:clamp(56px,9vw,120px);margin-top:16px}
@@ -217,8 +312,9 @@ footer.site a:hover{color:var(--red)}
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
     <nav class="main" id="mainNav" aria-label="Main">
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#work" data-nav="work">Work</a>
+      <a href="#content" data-nav="content">Content</a>
+      <a href="#social" data-nav="social">Social Media</a>
+      <a href="#advertising" data-nav="advertising">Advertising</a>
       <a href="#about" data-nav="about">About</a>
       <a href="#journal" data-nav="journal">Journal</a>
       <a href="#contact" class="btn" data-nav="contact">Free Audit</a>
@@ -236,7 +332,7 @@ footer.site a:hover{color:var(--red)}
       <p class="lede">Photography, video, social media and paid ads for shops, builders and brands in Alberta's car scene. We help you show up online as yourself, with content that looks as sharp as your work.</p>
       <div class="actions">
         <a class="btn" href="#contact">Get your free audit</a>
-        <a class="btn ghost" href="#work">See the work</a>
+        <a class="btn ghost" href="#content">See the work</a>
       </div>
       <dl class="facts">
         <div><dt>In the scene</dt><dd>Nearly a decade</dd></div>
@@ -245,6 +341,7 @@ footer.site a:hover{color:var(--red)}
       </dl>
     </div>
   </div>
+  <div class="wrap"><div class="logos" id="logoStrip"></div></div>
 
   <section id="services">
     <div class="wrap">
@@ -255,27 +352,27 @@ footer.site a:hover{color:var(--red)}
       <div class="services">
         <div class="service">
           <span class="num">01</span>
-          <h3>Content Creation</h3>
-          <p>Reels, photo sets and behind-the-scenes content shot at your shop, on your builds, with your people in frame.</p>
-          <ul><li>Short-form reels</li><li>Install and process content</li><li>Monthly content days</li></ul>
+          <h3>Content</h3>
+          <p>Photo, video, reels and design shot at your shop, on your builds, with your people in frame.</p>
+          <span class="from" data-price="content"></span>
+          <ul><li>Short-form video and reels</li><li>Automotive and brand photography</li><li>Logo, branding and graphics</li></ul>
+          <a class="more" href="#content">Explore content →</a>
         </div>
         <div class="service">
           <span class="num">02</span>
-          <h3>Social Media Management</h3>
+          <h3>Social Media</h3>
           <p>Planning, posting and community care so your page stays active while you stay in the bay.</p>
-          <ul><li>Content calendar</li><li>Captions and scheduling</li><li>Monthly analytics recap</li></ul>
+          <span class="from" data-price="social"></span>
+          <ul><li>Minimum, Growth and Premium levels</li><li>Stories and community management</li><li>Weekly check-ins and monthly report</li></ul>
+          <a class="more" href="#social">Explore social media →</a>
         </div>
         <div class="service">
           <span class="num">03</span>
-          <h3>Total Social + Ads</h3>
-          <p>Everything in management, plus Meta and Google ad campaigns built to bring real customers through the door.</p>
-          <ul><li>Meta Ads and Google Ads</li><li>Google Business Profile</li><li>Monthly performance report</li></ul>
-        </div>
-        <div class="service">
-          <span class="num">04</span>
-          <h3>Photography</h3>
-          <p>Rolling shots, events, brand shoots and portraits. High contrast, deep blacks, true reds. Delivered in a private online gallery.</p>
-          <ul><li>Rolling and static car shoots</li><li>Events and meets</li><li>Brand and portrait sessions</li></ul>
+          <h3>Advertising</h3>
+          <p>Meta and Google ad campaigns built and managed to bring real customers through the door.</p>
+          <span class="from" data-price="ads"></span>
+          <ul><li>Campaign setup and ad creative</li><li>Ongoing optimization</li><li>Monthly performance report</li></ul>
+          <a class="more" href="#advertising">Explore advertising →</a>
         </div>
       </div>
     </div>
@@ -285,7 +382,7 @@ footer.site a:hover{color:var(--red)}
     <div class="wrap">
       <div class="section-head">
         <div><p class="eyebrow">Portfolio</p><h2>Selected work</h2></div>
-        <a href="#work">Full portfolio →</a>
+        <a href="#content">More work →</a>
       </div>
       <div class="grid" id="homeGrid"></div>
     </div>
@@ -294,9 +391,23 @@ footer.site a:hover{color:var(--red)}
   <section>
     <div class="wrap">
       <div class="section-head">
-        <div><p class="eyebrow">Clients</p><h2>Who we work with</h2></div>
+        <div><p class="eyebrow">Projects</p><h2>Inside the work</h2></div>
       </div>
-      <div class="clients" id="clientList"></div>
+      <div class="cases" id="homeCases"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Why MFM</p><h2>Why shops work with us</h2></div>
+      </div>
+      <div class="why">
+        <div><span class="n">01</span><h3>Automotive first</h3><p>Cars and the shops that work on them are the focus, not a side niche. We already know the language, the work and the customers.</p></div>
+        <div><span class="n">02</span><h3>In the scene</h3><p>Nearly a decade at Edmonton meets, drift events and shops. We show up with the community, not just for the shoot.</p></div>
+        <div><span class="n">03</span><h3>Numbers you can read</h3><p>A background in business and data analytics means every month ends with a clear report on what worked and what changes next.</p></div>
+        <div><span class="n">04</span><h3>Straight to Shlee</h3><p>No account manager in between. You plan, shoot and review directly with the person doing the work.</p></div>
+      </div>
     </div>
   </section>
 
@@ -336,23 +447,139 @@ footer.site a:hover{color:var(--red)}
   </section>
 </div>
 
-<!-- ============ WORK ============ -->
-<div class="view" id="view-work">
+<!-- ============ CONTENT ============ -->
+<div class="view" id="view-content">
   <div class="page-head"><div class="wrap">
-    <p class="eyebrow">Portfolio</p>
-    <h1>The work</h1>
-    <p>Builds, shops, events and the people behind them. Shot across Edmonton and Alberta.</p>
+    <p class="eyebrow">Content</p>
+    <h1>Content that shows the work</h1>
+    <p>Your work is already worth looking at. We capture it, edit it and hand it back ready to post, in a look that stays consistent from one shoot to the next.</p>
   </div></div>
   <section style="padding-top:0;border-top:0">
     <div class="wrap">
-      <div class="filters" id="filters" role="group" aria-label="Filter portfolio"></div>
-      <div class="grid" id="workGrid"></div>
+      <div class="offers">
+        <div class="offer"><h3>Short-form video</h3><p>Reels and TikToks built around installs, reveals and the people doing the work.</p></div>
+        <div class="offer"><h3>Photography</h3><p>Rolling shots, static builds, events and brand portraits. High contrast, deep blacks, true reds.</p></div>
+        <div class="offer"><h3>Behind the scenes</h3><p>Process clips and day-in-the-shop content that lets customers meet you before they call.</p></div>
+        <div class="offer"><h3>Logo and branding</h3><p>Logo suites, brand guides and launch-ready assets for new shops and rebrands.</p></div>
+        <div class="offer"><h3>Graphics and ad creative</h3><p>Carousels, promo graphics and ad creative designed in your brand colours.</p></div>
+        <div class="offer"><h3>Marketing strategy</h3><p>A brand and competitor audit, content pillars and a 90-day roadmap to follow.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Projects</p><h2>Content in action</h2></div></div>
+      <div class="cases" data-cases="Content"></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Monthly content</p><h2>Content creation</h2></div></div>
+      <div class="tiers" id="tiersContent"></div>
+      <div class="includes"><span><b>Every level:</b>photo and video</span><span>social-ready edited delivery</span><span>monthly planning and strategy</span></div>
+      <p class="fine" data-terms></p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">One-time projects</p><h2>Foundations</h2></div></div>
+      <div class="projects">
+        <div class="project"><h3>Marketing Strategy</h3><p>Brand and market audit, competitor scan, positioning, voice, content pillars and a 90-day content and channel roadmap.</p><span class="q">Custom quote</span></div>
+        <div class="project"><h3>Branding and Identity</h3><p>Logo suite with primary and secondary marks, a brand guide for colour, type and usage, and a launch-ready asset package.</p><span class="q">Custom quote</span></div>
+        <div class="project"><h3>Single sessions</h3><p>One-off photo shoots, event coverage and individual projects outside a monthly retainer.</p><span class="q">Quoted on request</span></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Instagram</p><h2>Recent work</h2></div><a href="https://www.instagram.com/midnightfuelmedia" rel="noopener">Follow on Instagram →</a></div>
+      <!-- INSTAGRAM FEED: paste the embed code from Behold or LightWidget inside the div below, replacing the placeholder paragraph. -->
+      <div class="ig" id="instagramFeed">
+        <div data-behold-id="EUipcdXEs8qUHN7fKCFR"></div>
+        <script>
+          (function() {
+            if(window.__bhldScript)return;window.__bhldScript=true;
+            const d=document,s=d.createElement("script");s.type="module";
+            s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+          })();
+        </script>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SOCIAL MEDIA ============ -->
+<div class="view" id="view-social">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Social Media</p>
+    <h1>Stay active without leaving the bay</h1>
+    <p>We plan, post and look after your community, so your page keeps working while you keep working.</p>
+  </div></div>
+  <section style="padding-top:0;border-top:0">
+    <div class="wrap demo">
+      <div>
+        <p class="eyebrow">What management looks like</p>
+        <h2>A month with MFM</h2>
+        <p>It starts with a strategy session to set your goals, content pillars and posting plan. From there we build a calendar, write captions, schedule posts, run your stories and reply to comments and messages.</p>
+        <p>You get a quick check-in every week and a plain-language report every month showing what's working and what we're changing next.</p>
+      </div>
+      <!-- DEMO VIDEO: upload a vertical clip as videos/social-demo.mp4 -->
+      <div class="phone">
+        <span class="swap">Demo video<br>videos/social-demo.mp4</span>
+        <video src="videos/social-demo.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Walkthrough of social media management" onerror="this.remove()" onloadeddata="this.previousElementSibling.remove()"></video>
+      </div>
     </div>
   </section>
   <section>
     <div class="wrap">
       <div class="section-head"><div><p class="eyebrow">Clients</p><h2>Who we work with</h2></div></div>
       <div class="clients" id="clientList2"></div>
+      <div class="cases" data-cases="Social Media" style="margin-top:16px"></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Management levels</p><h2>Pick your level</h2></div></div>
+      <div class="tiers" id="tiersSocial"></div>
+      <div class="includes"><span><b>Every level:</b>1 to 2 platforms</span><span>strategy session</span><span>weekly check-ins</span><span>monthly report</span><span>ask about Community Spotlights</span></div>
+      <div class="bundle" data-bundle></div>
+      <p class="fine" data-terms></p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ADVERTISING ============ -->
+<div class="view" id="view-advertising">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Advertising</p>
+    <h1>Ads that bring people through the door</h1>
+    <p>Paid campaigns on Meta and Google, set up and managed by someone who knows your customers and checks the numbers every week.</p>
+  </div></div>
+  <section style="padding-top:0;border-top:0">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">How we do it</p><h2>The process</h2></div></div>
+      <ol class="steps">
+        <li><h3>Audit</h3><p>We review your current ads, audience and Google Business Profile, and agree on what success looks like.</p></li>
+        <li><h3>Set up</h3><p>Campaigns, audiences, tracking and budgets built properly from the start.</p></li>
+        <li><h3>Create</h3><p>Ad creative made from your real work, not stock photos.</p></li>
+        <li><h3>Optimize</h3><p>We monitor results and adjust targeting, creative and budget as the data comes in.</p></li>
+        <li><h3>Report</h3><p>A monthly report in plain language: what you spent, what it brought in, and what's next.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Projects</p><h2>Ads in action</h2></div></div>
+      <div class="cases" data-cases="Advertising"></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Ads management levels</p><h2>Pick your level</h2></div></div>
+      <div class="tiers" id="tiersAds"></div>
+      <div class="includes"><span><b>Every level:</b>campaign setup and creative</span><span>optimization and monitoring</span><span>monthly reporting</span></div>
+      <div class="bundle" data-bundle></div>
+      <p class="fine">Ad spend is billed separately and paid directly by you to the platform. <span data-terms></span></p>
     </div>
   </section>
 </div>
@@ -398,6 +625,11 @@ footer.site a:hover{color:var(--red)}
   </section>
 </div>
 
+<!-- ============ SINGLE PROJECT ============ -->
+<div class="view" id="view-project">
+  <section style="border-top:0"><div class="wrap"><article class="proj" id="projectBody"></article></div></section>
+</div>
+
 <!-- ============ SINGLE POST ============ -->
 <div class="view" id="view-post">
   <section style="border-top:0"><div class="wrap"><article class="post" id="postBody"></article></div></section>
@@ -433,8 +665,10 @@ footer.site a:hover{color:var(--red)}
             <option>Free online presence audit</option>
             <option>Content creation</option>
             <option>Social media management</option>
+            <option>Ads management</option>
             <option>Total social + ads</option>
-            <option>Photography</option>
+            <option>Branding or marketing strategy</option>
+            <option>Photography session</option>
             <option>Not sure yet</option>
           </select>
         </div>
@@ -456,7 +690,7 @@ footer.site a:hover{color:var(--red)}
     </div>
     <div>
       <h4>Explore</h4>
-      <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#journal">Journal</a></li><li><a href="#contact">Free audit</a></li></ul>
+      <ul><li><a href="#content">Content</a></li><li><a href="#social">Social Media</a></li><li><a href="#advertising">Advertising</a></li><li><a href="#about">About</a></li><li><a href="#journal">Journal</a></li><li><a href="#contact">Free audit</a></li></ul>
     </div>
     <div>
       <h4>Get in touch</h4>
@@ -478,11 +712,92 @@ const PORTFOLIO = [
   {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", video:"videos/Prairie_Reveal.mp4"},
   {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
   {title:"Shop reels", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
+  {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
+  {title:"Expedition PPF + ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-expedition-ppf-ceramic.jpg", video:"videos/priminal-expedition-ppf-ceramic.mp4"},
+  {title:"Porsche ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"},
   {title:"Drift day", client:"Event coverage", cat:"Events", img:"", wide:true},
   {title:"Night meet", client:"Edmonton car scene", cat:"Events", img:""},
   {title:"Owner portrait", client:"Brand session", cat:"Portraits", img:""},
   {title:"Detail study", client:"Private build", cat:"Automotive", img:""},
   {title:"Ad creative", client:"Precision Edmonton", cat:"Ads", img:""}
+];
+
+/* PRICING: edit names, prices and details here. Leave price:"" to show "Custom quote". */
+const PRICING = {
+  content:{from:"$749", label:"/mo"},
+  social:{from:"$649", label:"/mo"},
+  ads:{from:"$500", label:"/mo"},
+  bundle:{from:"$999", save:"Save $150 vs. separately"},
+  terms:"Monthly retainers have a 3-month minimum. Every package is a starting point, scoped to your shop. Rates in CAD, GST not included."
+};
+const TIERS = {
+  content:[
+    {name:"Minimum", price:"$749", blurb:"Steady content for shops getting started.", rows:[["Content sessions / month","2"],["Session length","1 hr each"],["Planning and shot list","1 hr"]]},
+    {name:"Growth", price:"", blurb:"Enough content to post consistently every week.", rows:[["Content sessions / month","4"],["Session length","1 hr each"],["Planning and shot list","2 hr"]]},
+    {name:"Premium", price:"", blurb:"A full content library for busy, high-volume shops.", rows:[["Content sessions / month","6"],["Session length","1 hr each"],["Planning and shot list","3 hr"]]}
+  ],
+  social:[
+    {name:"Minimum", price:"$649", blurb:"A consistent, active page with the essentials covered.", rows:[["Posts / month","10"],["Stories / week","2"],["Community engagement","Light"]]},
+    {name:"Growth", price:"", blurb:"More posts, more stories and more time with your community.", rows:[["Posts / month","14"],["Stories / week","4"],["Community engagement","Active"]]},
+    {name:"Premium", price:"", blurb:"Full presence: daily stories and hands-on community care.", rows:[["Posts / month","16"],["Stories / week","6"],["Community engagement","Full"]]}
+  ],
+  ads:[
+    {name:"Minimum", price:"$500", blurb:"One focused campaign on one platform.", rows:[["Platforms","1"],["Campaigns / month","1"],["Typical platform","Meta (Facebook + Instagram)"]]},
+    {name:"Growth", price:"", blurb:"Reach customers across two platforms.", rows:[["Platforms","2"],["Campaigns / month","2"],["Typical platforms","Meta + Google"]]},
+    {name:"Premium", price:"", blurb:"Multi-platform campaigns for shops ready to scale.", rows:[["Platforms","Multi-platform"],["Campaigns / month","3"],["Typical platforms","Meta, Google + more"]]}
+  ]
+};
+
+/* CLIENT LOGOS: upload white or light logos (PNG, transparent) to images/logos/.
+   If a file is missing, the client's name shows as text instead. */
+const LOGOS = [
+  {name:"Priminal Auto Styling", img:"images/logos/priminal.png"},
+  {name:"Precision Edmonton", img:"images/logos/precision.png"}
+];
+
+/* PROJECTS: each one gets its own page at #project-<slug>.
+   cover: an image or video path for the top of the page. gallery: extra media, same format as PORTFOLIO.
+   services: which service pages it appears on ("Content", "Social Media", "Advertising"). */
+const PROJECTS = [
+  {
+    slug:"priminal-auto-styling", client:"Priminal Auto Styling",
+    title:"Monthly reels for a busy shop",
+    summary:"Turning everyday installs into a steady stream of short-form content.",
+    services:["Content","Social Media"], since:"2026", role:"Short-form content retainer",
+    cover:{img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"},
+    challenge:"Priminal does high-quality styling and PPF work every day, but the shop floor is busy and filming is the first thing to get skipped. Most of that work was never making it online.",
+    approach:[
+      "Regular content sessions at the shop, filmed around real jobs instead of staged shoots",
+      "Short-form reels built around installs, reveals and the people doing the work",
+      "A monthly plan so posting stays consistent through busy weeks"
+    ],
+    gallery:[
+      {title:"PPF install", client:"Priminal Auto Styling", cat:"Content", img:"images/Priminal_PPF_Install.jpg"},
+      {title:"Referral reel", client:"Priminal Auto Styling", cat:"Content", video:"videos/Priminal_Reel1_Referrals.mp4"},
+      {title:"Raptor stealth", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-raptor-stealth.jpg", video:"videos/priminal-raptor-stealth.mp4"},
+      {title:"Expedition full PPF + ceramic", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-expedition-ppf-ceramic.jpg", video:"videos/priminal-expedition-ppf-ceramic.mp4"},
+      {title:"Porsche ceramic coating", client:"Priminal Auto Styling", cat:"Content", img:"images/priminal-porsche-ceramic.jpg", video:"videos/priminal-porsche-ceramic.mp4"}
+    ],
+    status:"Early signs are good: engagement on posts is up and the following is growing across platforms. Full numbers will be shared once the first quarter wraps up."
+  },
+  {
+    slug:"precision-edmonton", client:"Precision Edmonton",
+    title:"Social and ads strategy for a long-running wrap shop",
+    summary:"Bringing a strong local reputation to every platform, with organic and paid working together.",
+    services:["Social Media","Advertising"], since:"2026", role:"Social media, content and ads strategy",
+    cover:{video:"videos/Prairie_Reveal.mp4"},
+    challenge:"Precision has decades of experience and thousands of wrapped vehicles behind it, but its online presence didn't fully reflect that. The goal is to grow organic reach and get more out of every advertising dollar.",
+    approach:[
+      "A full audit of social pages, Google Business Profile and ad performance",
+      "Consistent posting built around real wrap and PPF work from the shop",
+      "Google Business Profile improvements to support local search",
+      "An ongoing review of ad campaigns to focus spend where it performs best"
+    ],
+    gallery:[
+      {title:"Wrap reveal", client:"Precision Edmonton", cat:"Content", video:"videos/Prairie_Reveal.mp4"}
+    ],
+    status:"Work is underway. Post engagement and followers are trending up, and results will be shared here as they come in."
+  }
 ];
 
 const CLIENTS = [
@@ -593,9 +908,10 @@ function tile(p){
     : `<div class="shot" style="${placeholderArt(p.title+p.client)}"></div><span class="swap">Photo placeholder</span>`;
   return `<figure class="tile${p.wide?' wide':''}">${art}<figcaption><div><strong>${esc(p.title)}</strong><span>${esc(p.client)}</span></div><span class="tag">${esc(p.cat)}</span></figcaption></figure>`;
 }
-function renderWork(cat){
-  const list = cat==="All" ? PORTFOLIO : PORTFOLIO.filter(p=>p.cat===cat);
-  $("#workGrid").innerHTML = list.map(p=>tile({...p, wide: cat==="All" && p.wide})).join("");
+const withMedia = PORTFOLIO.filter(p=>p.img||p.video);
+function tierCard(t){
+  const price = t.price ? `<small>Starts at</small><b>${esc(t.price)}</b> /mo` : `<small>Pricing</small><b>Custom</b> quote`;
+  return `<div class="tier"><span class="lvl">${esc(t.name)}</span><div class="price">${price}</div><p>${esc(t.blurb)}</p><dl>${t.rows.map(r=>`<div><dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd></div>`).join("")}</dl><a class="btn ghost" href="#contact">Ask about ${esc(t.name)}</a></div>`;
 }
 function postCard(p){
   return `<a class="post-card" href="#post-${p.slug}"><div class="meta"><span class="cat">${esc(p.cat)}</span><span>${fmtDate(p.date)}</span><span>${p.read}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p><span class="more">Read →</span></a>`;
@@ -612,15 +928,32 @@ function filterButtons(el, cats, onPick){
 const sorted = [...POSTS].sort((a,b)=>b.date.localeCompare(a.date));
 
 // Home
-$("#homeGrid").innerHTML = PORTFOLIO.slice(0,5).map(tile).join("");
+function media(m, alt){
+  if(m.video) return (m.img?`<img src="${esc(m.img)}" alt="">`:'')+`<video src="${esc(m.video)}"${m.img?` poster="${esc(m.img)}"`:''} autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"></video>`;
+  if(m.img) return `<img src="${esc(m.img)}" alt="${esc(alt)}" loading="lazy">`;
+  return `<div class="shot" style="position:absolute;inset:0;${placeholderArt(alt)}"></div>`;
+}
+function caseCard(c){
+  return `<a class="case" href="#project-${c.slug}"><div class="cover">${media(c.cover||{}, c.client)}</div><div class="body"><div class="tags">${c.services.map(x=>`<span>${esc(x)}</span>`).join("")}</div><h3>${esc(c.client)}</h3><p>${esc(c.summary)}</p><span class="more">Project details →</span></div></a>`;
+}
+$("#homeCases").innerHTML = PROJECTS.map(caseCard).join("");
+document.querySelectorAll("[data-cases]").forEach(el=>{
+  const list = PROJECTS.filter(c=>c.services.includes(el.dataset.cases));
+  el.innerHTML = list.map(caseCard).join("");
+});
+$("#logoStrip").innerHTML = `<span class="lbl">Shops we work with</span>` + LOGOS.map(l=>`<img src="${esc(l.img)}" alt="${esc(l.name)}" onerror="this.outerHTML='<span class=&quot;word&quot;>${esc(l.name)}</span>'">`).join("");
+$("#homeGrid").innerHTML = (withMedia.length?withMedia:PORTFOLIO).slice(0,5).map(tile).join("");
+$("#tiersContent").innerHTML = TIERS.content.map(tierCard).join("");
+$("#tiersSocial").innerHTML = TIERS.social.map(tierCard).join("");
+$("#tiersAds").innerHTML = TIERS.ads.map(tierCard).join("");
+document.querySelectorAll("[data-price]").forEach(el=>{const k=PRICING[el.dataset.price]; el.textContent=`Starts at ${k.from}${k.label}`;});
+document.querySelectorAll("[data-terms]").forEach(el=>el.textContent=PRICING.terms);
+document.querySelectorAll("[data-bundle]").forEach(el=>el.innerHTML=`<div><p class="eyebrow">Best value</p><h3>Total Social + Ads</h3><p>Everything in social media management plus full Meta and Instagram ad campaign management, with one report covering organic and paid. Ad spend billed separately.</p></div><div class="price"><small>Starts at</small><b>${esc(PRICING.bundle.from)}</b> /mo<small style="margin-top:6px;color:var(--red)">${esc(PRICING.bundle.save)}</small></div>`);
 const clientHTML = CLIENTS.map(c=>`<div class="client"><span class="what">${esc(c.what)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p></div>`).join("");
-$("#clientList").innerHTML = clientHTML; $("#clientList2").innerHTML = clientHTML;
+$("#clientList2").innerHTML = clientHTML;
 $("#quoteList").innerHTML = TESTIMONIALS.map(t=>`<blockquote class="${t.pending?'pending':''}"><p>${t.pending?'':'“'}${esc(t.quote)}${t.pending?'':'”'}</p><footer>${esc(t.name)}</footer></blockquote>`).join("");
 $("#homePosts").innerHTML = sorted.slice(0,3).map(postCard).join("");
 
-// Work
-filterButtons($("#filters"), [...new Set(PORTFOLIO.map(p=>p.cat))], renderWork);
-renderWork("All");
 
 // Journal
 function renderPosts(cat){ $("#allPosts").innerHTML = (cat==="All"?sorted:sorted.filter(p=>p.cat===cat)).map(postCard).join(""); }
@@ -628,10 +961,27 @@ filterButtons($("#postFilters"), [...new Set(POSTS.map(p=>p.cat))], renderPosts)
 renderPosts("All");
 
 // Router
-const VIEWS = ["home","work","about","journal","contact"];
+const VIEWS = ["home","content","social","advertising","about","journal","contact"];
 function route(){
   const hash = location.hash.slice(1) || "home";
   let view = VIEWS.includes(hash) ? hash : "home";
+  if(hash.startsWith("project-")){
+    const c = PROJECTS.find(x=>"project-"+x.slug===hash);
+    if(c){
+      view="project";
+      $("#projectBody").innerHTML = `<a class="back" href="#home">← Home</a>
+        <p class="eyebrow" style="margin-top:32px">Project · ${esc(c.client)}</p>
+        <h1>${esc(c.title)}</h1>
+        <p class="lede">${esc(c.summary)}</p>
+        <dl class="facts"><div><dt>Client</dt><dd>${esc(c.client)}</dd></div><div><dt>Services</dt><dd>${esc(c.services.join(", "))}</dd></div><div><dt>Since</dt><dd>${esc(c.since)}</dd></div></dl>
+        <div class="hero-media">${media(c.cover||{}, c.client)}</div>
+        <div class="cols"><h2>The challenge</h2><div><p>${esc(c.challenge)}</p></div></div>
+        <div class="cols"><h2>What we did</h2><div><ul>${c.approach.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div></div>
+        ${c.gallery&&c.gallery.length?`<div class="cols"><h2>The work</h2><div class="grid">${c.gallery.map(g=>tile(g)).join("")}</div></div>`:""}
+        <div class="cols"><h2>Where it's headed</h2><div><p>${esc(c.status)}</p></div></div>
+        <div class="post-end"><span class="mute">Want this for your shop?</span><a class="btn" href="#contact">Get a free audit</a></div>`;
+    }
+  }
   if(hash.startsWith("post-")){
     const p = POSTS.find(x=>"post-"+x.slug===hash);
     if(p){
