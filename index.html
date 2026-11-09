@@ -410,7 +410,7 @@ footer.site a:hover{color:var(--red)}
         <div><span class="n">01</span><h3>Automotive first</h3><p>Cars and the shops that work on them are the focus, not a side niche. We already know the language, the work and the customers.</p></div>
         <div><span class="n">02</span><h3>In the scene</h3><p>Nearly a decade at Edmonton meets, drift events and shops. We show up with the community, not just for the shoot.</p></div>
         <div><span class="n">03</span><h3>Numbers you can read</h3><p>A background in business and data analytics means every month ends with a clear report on what worked and what changes next.</p></div>
-        <div><span class="n">04</span><h3>One point of contact</h3><p>Ashlee manages every account personally. The creatives on your project are the people you meet at planning and on shoot day, never a hidden back office.</p></div>
+        <div><span class="n">04</span><h3>One point of contact</h3><p>Shlee manages every account personally. The creatives on your project are the people you meet at planning and on shoot day, never a hidden back office.</p></div>
       </div>
     </div>
   </section>
@@ -593,14 +593,14 @@ footer.site a:hover{color:var(--red)}
   <section style="border-top:0">
     <div class="wrap about">
       <div class="portrait">
-        <!-- Replace with: <img src="images/shlee.jpg" alt="Ashlee Reilly, founder of Midnight Fuel Media"> -->
-        <div class="shot" data-art="portrait" style="position:absolute;inset:0"></div>
+        <!-- Your portrait: upload it as images/shlee.jpg. The placeholder text only shows if that file is missing. -->
         <span class="swap" style="position:absolute;top:16px;left:16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Your portrait here</span>
+        <img src="images/shlee.jpg" alt="Shlee Reilly, founder of Midnight Fuel Media" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()" onload="this.previousElementSibling.remove()">
       </div>
       <div>
         <p class="eyebrow">About the owner</p>
-        <h2>Hi, I'm Ashlee.</h2>
-        <p>I've spent nearly a decade in Canada's automotive community: at meets, at drift events, in shops and in the passenger seat. Midnight Fuel Media came out of that. I kept seeing incredible work from local shops and builders that nobody online ever got to see.</p>
+        <h2>Hi, I'm Shlee.</h2>
+        <p>I've spent nearly a decade in Edmonton's automotive community: at meets, at drift events, in shops and in the passenger seat. Midnight Fuel Media came out of that. I kept seeing incredible work from local shops and builders that nobody online ever got to see.</p>
         <p>My background is in business: a Bachelor of Commerce in International Business, years in credit analysis and eCommerce, and a Google Data Analytics certificate. So alongside the camera, I care about the numbers. Every client gets a monthly report showing what's working and what we'll change.</p>
         <p>The goal is simple. Help you go from invisible online to knowing how to show up as yourself, with your face, your process and your story, so customers already trust you before they call.</p>
         <div class="values">
@@ -1015,7 +1015,7 @@ function route(){
     const p = POSTS.find(x=>"post-"+x.slug===hash);
     if(p){
       view="post";
-      $("#postBody").innerHTML = `<a class="back" href="#journal">← Journal</a><p class="eyebrow" style="margin-top:32px">${esc(p.cat)}</p><h1>${esc(p.title)}</h1><p class="meta">${fmtDate(p.date)} · ${p.read} read · By Ashlee Reilly</p>${p.body}<div class="post-end"><span class="mute">Want this done for your shop?</span><a class="btn" href="#contact">Get a free audit</a></div>`;
+      $("#postBody").innerHTML = `<a class="back" href="#journal">← Journal</a><p class="eyebrow" style="margin-top:32px">${esc(p.cat)}</p><h1>${esc(p.title)}</h1><p class="meta">${fmtDate(p.date)} · ${p.read} read · By Shlee Reilly</p>${p.body}<div class="post-end"><span class="mute">Want this done for your shop?</span><a class="btn" href="#contact">Get a free audit</a></div>`;
     }
   }
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active", v.id==="view-"+view));
